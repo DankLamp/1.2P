@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1> A few different JavaScript Concepts </h1>
+        
+        <h2> Javascript Strings:</h2>
+
+        <!-- Slicing -->
+        <h3> Slicing</h3>
+        <p> 1,2,3,4,5,6,7,8,9,10,11,12,13,14 </p>
+        <p> The sliced part of the previous string is:</p>
+        <p id="slice"></p>
+        <script>
+            let string = "1,2,3,4,5,6,7,8,9,10,11,12,13,14";
+            let section = string.slice(4,20);
+            document.getElementById("slice").innerHTML = section;
+        </script>
+
+        <!-- Replace -->
+        <h3> Replacing </h3>
+        <p> Click that button below to replace "Sonic" with "Knuckles":
+            <br>
+        <p id="replacement"> Sonic does not study at Deakin </p>
+        <button onclick="ReplaceFunction()"> THIS BUTTON </button>
+        <script>
+            function ReplaceFunction() {
+            let text = document.getElementById("replacement").innerHTML;
+            document.getElementById("replacement").innerHTML =
+            text.replace("Sonic","Knuckles");
+            }
+        </script>
+
+        <!-- Convert to Uppercase -->
+        <h3> Converting to uppercase </h3>
+        <p> Click that button below to make the following uppercase! </p>
+        <button onclick="convertupper()"> CONVERT </button>
+        <p id="uppercase"> s o n i c </p>
+        <script>
+            function convertupper() {
+                let text = document.getElementById("uppercase").innerHTML;
+                document.getElementById("uppercase").innerHTML = 
+                text.toUpperCase();
+            }
+        </script>
+
+        <!-- Convert to lowercase -->
+        <h3> Converting to lowercase </h3>
+        <p> Click that button below to make the following lowercase! </p>
+        <button onclick="convertlower()"> CONVERT </button>
+        <p id="lowercase"> K N U C K L E S </p>
+        <script>
+            function convertlower() {
+                let text = document.getElementById("lowercase").innerHTML;
+                document.getElementById("lowercase").innerHTML = 
+                text.toLowerCase();
+            }
+        </script>
+
+        <!-- Property Access -->
+        <h3> Property Access </h3>
+        <p> The fourth character on a mystery string is: </p>
+        <p id="first"></p>
+        <script>
+            let text = "SONIC ROCKS";
+            document.getElementById("first").innerHTML = text[4];
+        </script>
+        
+        <h2> JavaScript Numbers: </h2>
+
+        <!-- Addition using numbers -->
+        <h3> Addtion </h3>
+        <p> a number added to another number should result in a number, e.g.,
+            if x=3 and y=2, then the sum of x and y should be </p>
+            <p id="sum"> </p>
+        <script>
+            let x = 3;
+            let y = 2;
+            let sum = x + y;
+            document.getElementById("sum").innerHTML = sum;
+        </script>
+
+        <!-- Attempted addition using numbers that are actually strings -->
+        <h3> Concatenated Addition </h3>
+        <p> if two numbers that are strings are addded, then the result will not
+            be a number, but combined strings. E.g., "3" + "2" is:
+        <p id="absum"></p>
+            <script>
+            let a = "3";
+            let b = "2";
+            let absum = a + b;
+            document.getElementById("absum").innerHTML = absum;
+            </script>
+        </p>
+
+        <!-- Numeric strings division -->
+        <h3> Numeric strings division </h3>
+        <p> JS can convert strings to numbers and perform operations, e.g., if d = 6 and c = 3, then d / c = </p>
+        <p id="dc"></p>
+        <script>
+            let c = "3"
+            let d = "6"
+            let dc = d/c
+            document.getElementById("dc").innerHTML = dc;
+        </script>
+
+        <!-- Numeric strings multiplication -->
+        <h3> Numeric strings multiplication </h3>
+        <p> JS can convert strings to numbers and perform operations, e.g., if d = 6 and c = 3, then c*d = </p>
+        <p id="cd"></p>
+        <script>
+            let cd = c*d
+            document.getElementById("cd").innerHTML = cd;
+        </script>
+
+        <!-- Rounding a number to an amount of digits -->
+        <h3> Rounding number to significant figures </h3>
+        <p> JS can convert a number to a specific amount of significant figures using 'toFixed([significant figures])' e.g., for 6.895392</p>
+        <p id="sigfigs"></p>
+
+        <script>
+            let no = 6.895392;
+            document.getElementById("sigfigs").innerHTML = 
+            no.toFixed(0) + "<br>" +
+            no.toFixed(1) + "<br>" +
+            no.toFixed(2) + "<br>" +
+            no.toFixed(3) + "<br>" +
+            no.toFixed(4) + "<br>" +
+            no.toFixed(5) + "<br>" +
+            no.toFixed(6);
+        </script>
+
+        <h2>JavaScript Arrays</h2>
+
+        <!-- Pop() Method -->
+        <h3> Removing elements from an array using pop()</h3>
+        <p> The following is an array / list of objects followed by the same array with js pop() removing an element</p>
+        <p id="array"></p>
+        <p id="array2"></p>
+
+        <script>
+            const things= ["Sonic","Knuckles","Shadow","Tails"];
+            document.getElementById("array").innerHTML = things;
+            things.pop();
+            document.getElementById("array2").innerHTML = things;
+        </script>
+
+        <!-- Push() Method -->
+        <h3> Adding element to an array using push()</h3>
+        <p> The following is the previous array with an extra object added with the push() function</p>
+        <p id="morebois"></p>
+        <script>
+            things.push("EggMan");
+            document.getElementById("morebois").innerHTML = things;
+        </script>
+
+        <!-- Shift() Method -->
+        <h3> Removing an element using the shift method </h3>
+        <p> The following is the previous array with an object removed using the shift() function</p>
+        <p id="shiftedthings"></p>
+        <script>
+            things.shift();
+            document.getElementById("shiftedthings").innerHTML = things;
+        </script>
+
+        <!-- Unshift() Method -->
+        <h3> Adding an element using the unshift method</h3>
+        <p> The following is the previous array with an object added using the unshift() function</p>
+        <p id="unshiftedthings"></p>
+        <script>
+            things.unshift("Robotnik");
+            document.getElementById("unshiftedthings").innerHTML = things;
+        </script>
+
+        <!-- Changing an element -->
+        <h3> Bracket Indexing </h3>
+        <p> The following is the previous array with one of the objects switched out with another using its index number</p>
+        <p id="indexedthings"></p>
+        <script>
+            things[2]= "Sonic";
+            document.getElementById("indexedthings").innerHTML = things
+        </script>
+
+        <h2>JavaScript Dates</h2>
+
+        <!-- Making a new (current) date a refresh live-->
+        <h3> Displaying the current date and time </h3>
+        <p> A date object can be created with new Date()</p>
+        <p id="date"></p>
+
+        <script>
+        function updateDateTime() {
+            const time = new Date();
+            document.getElementById("date").innerHTML = time;
+        }
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+        </script>
+
+        <!-- Creating a non-live date object -->
+        <h3> Creating a non-live date object </h3>
+        <p> A non-live date object can be used by manually inputing another date</p>
+        <p id= "newdate"></p>
+        <script>
+            const time2 = new Date("2467-6-13");
+            document.getElementById("newdate").innerHTML = time2;
+        </script>
+
+        <!-- Specifying the date and time with hours, minutes, and seconds -->
+        <h3> Creating date objects specifying the hours, minutes, and seconds</h3>
+        <p> Example with '2056, 11, 5, 13, 54, 42' </p>
+        <p id="d1"></p>
+        <script>
+            const d1 = new Date(2056, 11, 5, 13, 54, 42);
+            document.getElementById("d1").innerHTML = d1;
+        </script>
+        
+        <!-- Specifying the date and time with hours and minutes -->
+        <h3> Creating date objects specifying the hours and minutes</h3>
+        <p> Example with '1975, 3, 7, 59, 11' </p>
+        <p id="d2"></p>
+        <script>
+            const d2 = new Date(1975, 3, 7, 59, 11);
+            document.getElementById("d2").innerHTML = d2;
+        </script>
+
+        <!-- Specifying the date and time with hours -->
+        <h3> Creating date objects specifying the hours and minutes</h3>
+        <p> Example with '9002, 11, 12, 12' </p>
+        <p id="d3"></p>
+        <script>
+            const d3 = new Date(9002, 11, 12, 12);
+            document.getElementById("d3").innerHTML = d3;
+        </script>
+
+        <!-- Basic multiplication using a function method -->
+        <h2> JavaScript Function Methods </h2>
+        <h3> Basic calculation using a function method</h3>
+        <p> The following value was produced by multiplying 2 numbers n1 and n2 </p>
+        <p id = "product"></p>
+        <script>
+            function multiply(n1, n2) {
+                return n1 * n2;
+            }
+
+            let product = multiply(5, 9);
+            document.getElementById("product").innerHTML = product;
+        </script>
+
+        <!-- Miles to Kilometers using a function method -->
+        <h3> Miles to Kilometers using a function method </h3>
+        <p> The following value was produced when entering 56 (miles) to find the amount of kilometers equal to it</p>
+        <p id="kms"></p>
+        <script>
+            function tokms(m) {
+                return m + " miles is equal to " + (1.60934 * m) + " kilometres"
+            }
+
+            let value = tokms(56);
+            document.getElementById("kms").innerHTML = value;
+        </script>
+    </body>
+</html>
